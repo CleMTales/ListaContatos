@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { Text, TextInput, TouchableOpacity, View } from "react-native"
+
+import { TextInput, TouchableOpacity, View } from "react-native"
 import { AntDesign, Entypo, Feather, FontAwesome } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { styles } from "./styles"
@@ -58,6 +58,7 @@ export default function InfoContato({ dado, setInfo, mudarTipo }) {
                     <TextInput
                         style={[styles.input]}
                         value={dado.valor}
+                        keyboardType= {dado.tipo == 'telefone' || dado.tipo == 'telefone fixo' ? "numeric" : null}
                         onChangeText={valorChanged}
                         editable={dado.tipo !== 'new'}
                     />

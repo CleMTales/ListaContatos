@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AntDesign, Feather } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
-import { Text, TextInput, TouchableOpacity, View } from "react-native"
+import { TextInput, TouchableOpacity, View } from "react-native"
 import ExibicaoLista from '../ExibicaoLista'
 import ExibicaoCartao from '../ExibicaoCartao'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -74,25 +74,16 @@ export default function Header(props) {
                 setListaContatos(listaAlfabetica)
                 setListaExibicao(listaAlfabetica)
             }
-            console.log(listaContatos)
         })
     }
 
     function pesquisar() {
         if (pesquisa != pesquisaAnterior) {
-            console.log('pesquisando')
-            console.log(pesquisa)
-            console.log(pesquisaAnterior)
-            const listaFiltrada = listaContatos.filter((contatoLista) => {
-                console.log(contatoLista.nome)
-                console.log(contatoLista.numero)
-                console.log(pesquisa)
+            const listaFiltrada = listaContatos.filter((contatoLista) => {               
                 return (String(contatoLista.nome).toLowerCase().includes(pesquisa) || String(contatoLista.numero).includes(pesquisa))
             })
-            console.log(listaFiltrada)
             setListaExibicao(listaFiltrada)
             setPesquisaAnterior(pesquisa)
-            console.log(listaFiltrada)
         }
     }
 
@@ -102,7 +93,6 @@ export default function Header(props) {
                 props.navigation.setParams({
                     shouldUpdate: false
                 }),
-                console.log(props.route.params?.shouldUpdate)
             )
         }
     }, [props.route.params?.shouldUpdate])
@@ -132,7 +122,7 @@ export default function Header(props) {
                         <AntDesign name="search1" size={20} color="black" />
                     </TouchableOpacity>
                 </View>
-                <View style={styles.containerExibicao}>
+                <View style={styles.containerBotaoExibicao}>
                     <TouchableOpacity activeOpacity={0.9}
                         style={[styles.botaoExibicaoEsq,
                         { backgroundColor: modoExibicao === 'lista' ? '#7395B1' : '#92BDE1' }]}
@@ -150,8 +140,9 @@ export default function Header(props) {
                     </TouchableOpacity>
                 </View>
             </View>
-            <Text>{pesquisa}</Text>
-            {modoExibicao === 'lista' ? <ExibicaoLista listaContatos={listaExibicao} /> : <ExibicaoCartao listaContatos={listaExibicao} />}
+            <View style = {[styles.containerExibicao]}>
+                {modoExibicao === 'lista' ? <ExibicaoLista listaContatos={listaExibicao} /> : <ExibicaoCartao listaContatos={listaExibicao} />}
+            </View>
         </View>
     )
 }

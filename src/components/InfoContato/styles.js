@@ -7,10 +7,6 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         borderBottomColor: '#DADADA'
     },
-    containerVertical: {
-        justifyContent: 'space-evenly',
-        width: '100%',
-    },
     containerHorizontal: {
         flexDirection: 'row',
         paddingBottom: 5,
@@ -57,37 +53,6 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 10,
         backgroundColor: 'transparent',
-    },
-    data: {
-        color: '#DADADA',
-        fontWeight: 'bold'
-    },
-    content: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 2,
-        marginBottom: 8
-    },
-    label: {
-        fontWeight: 'bold',
-        fontSize: 16
-    },
-    valores: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: '#2ECC71'
-    },
-    despesas: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: '#E74C3C'
-    },
-    oculto: {
-        marginTop: 6,
-        width: 80,
-        height: 10,
-        backgroundColor: '#DADADA',
-        borderRadius: 8
     }
 });
 

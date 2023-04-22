@@ -10,7 +10,7 @@ function ContatoListView({ contato }) {
     const navigation = useNavigation()
 
     return (
-        <TouchableOpacity style={styles.containerHorizontal}
+        <TouchableOpacity style={[styles.containerHorizontal,{marginBottom:5}]}
             onPress={() => {
                 navigation.navigate({
                     name: 'Adicionar Contato',

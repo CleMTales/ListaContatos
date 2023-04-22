@@ -30,7 +30,6 @@ function ContatoCartaoView({ contato }) {
     return (
         <TouchableOpacity style={[styles.containerCartao, { backgroundColor: '#A3D8EE', borderRadius: 20, borderWidth: 1, height: 210 }]}
             onPress={() => {
-                console.log(contato)
                 navigation.navigate('Adicionar Contato', {
                     contato: contato,
                     key: contato.id
@@ -59,7 +58,7 @@ function ContatoCartaoView({ contato }) {
                     </Text>
                 </LinearGradient>
             </View>
-            <View style={styles.containerHorizontal}>
+            <View style={[styles.containerHorizontal, {paddingLeft: 15, paddingRight: 10}]}>
                 <View style={[styles.userImage, { marginRight: 20 }]}>
                     <AntDesign name="user" size={103} color="#FFFFFF" />
                 </View>

@@ -8,7 +8,7 @@ export default memo(ExibicaoLista)
 function ExibicaoLista(props) {
     return (
         <View style={styles.containerContato}>
-            <FlatList style={styles.contatos}
+            <FlatList 
                 data={props.listaContatos}
                 keyExtractor={(item) => String(item.id)}
                 showsVerticalScrollIndicator={false}

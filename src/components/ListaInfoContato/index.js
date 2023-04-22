@@ -1,9 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
-import { AntDesign, Feather } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Text, TextInput, TouchableOpacity, View, FlatList } from "react-native";
-import InfoContato from "../InfoContato";
-import { styles } from './styles';
+
+import { TouchableOpacity, View, FlatList } from "react-native"
+import InfoContato from "../InfoContato"
+import { styles } from './styles'
 
 export default function ListaInfoContato({ infoContato, AddInfo, setInfo, mudarTipo }) {
 
@@ -12,7 +10,7 @@ export default function ListaInfoContato({ infoContato, AddInfo, setInfo, mudarT
             <View>
                 <InfoContato dado={{ id: -1, tipo: 'new', valor: '' }} />
                 <TouchableOpacity activeOpacity={0.9}
-                    style={styles.image}
+                    style={styles.infoImagePress}
                     onPress={AddInfo}
                 >
                 </TouchableOpacity>
@@ -22,7 +20,7 @@ export default function ListaInfoContato({ infoContato, AddInfo, setInfo, mudarT
     }
 
     return (
-        <FlatList style={styles.movimentos}
+        <FlatList style={styles.lista}
             data={infoContato}
             keyExtractor={(item) => String(item.id)}
             showsVerticalScrollIndicator={false}

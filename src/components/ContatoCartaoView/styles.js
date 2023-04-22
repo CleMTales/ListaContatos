@@ -20,18 +20,6 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         alignItems: 'center',
     },
-    image: {
-        borderRadius: 10,
-        borderColor: '#000000',
-        borderWidth: 1,
-        backgroundColor: '#45B9B9',
-        height: 55,
-        width: 55,
-        marginLeft: 5,
-        marginTop: '1%',
-        textAlign: 'center',
-        justifyContent: 'center'
-    },
     userImage: {
         borderRadius: 250,
         borderColor: '#000000',
@@ -39,7 +27,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#45B9B9',
         height: 115,
         width: 110,
-        marginLeft: '6%', //maybe 1
+        //marginLeft: '6%', //maybe 1
         paddingLeft: '1.05%',
         alignContent: 'flex-start',
     },
@@ -82,16 +70,6 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 10,
         backgroundColor: 'transparent',
-    },
-    data: {
-        color: '#DADADA',
-        fontWeight: 'bold'
-    },
-    content: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 2,
-        marginBottom: 8
     }
 });
 

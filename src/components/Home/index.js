@@ -23,7 +23,7 @@ export default function Home() {
             justifyContent: 'center',
             alignItems: 'stretch',
             position: 'absolute',
-            height: 50,
+            height: '7%',
           },
           tabBarLabelStyle: {
             fontSize: 15,

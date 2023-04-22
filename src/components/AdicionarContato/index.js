@@ -1,40 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { AntDesign, Feather } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import React, { useEffect, useState } from 'react'
+import { AntDesign, Feather } from '@expo/vector-icons'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Text, TextInput, TouchableOpacity, View } from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import ListaInfoContato from '../ListaInfoContato'
-import { useNavigation } from '@react-navigation/native';
-import styles from './styles';
-
+import { useNavigation } from '@react-navigation/native'
+import styles from './styles'
+import { StyleSheet } from 'react-native'
 export default function AdicionarContato({ route }) {
-    console.log(route)
-
-    
     var contato = route.params.contato
     const [contatoAnteriorID, setIDContatoAnt] = useState('')
-    const [nome, setNome] = useState('');
-    const [telPrincipal, setTelPrincipal] = useState('');
-    const [infoContato, setInfoContato] = useState([]);
-    const navigator = useNavigation();
+    const [nome, setNome] = useState('')
+    const [telPrincipal, setTelPrincipal] = useState('')
+    const [infoContato, setInfoContato] = useState([])
+    const navigator = useNavigation()
 
     function nomeChanged(nome) {
-        setNome(nome);
+        setNome(nome)
     }
 
     function telefonePrincipalChanged(telPrincipal) {
-        setTelPrincipal(telPrincipal);
+        setTelPrincipal(telPrincipal)
     }
 
     async function salvarContato() {
         let listaContatos = []
-        const response = await AsyncStorage.getItem('listaContatos');
+        const response = await AsyncStorage.getItem('listaContatos')
 
-        if (response) listaContatos = JSON.parse(response);
+        if (response) listaContatos = JSON.parse(response)
 
         var idAtual = route.params.contato.id != -1 ? route.params.contato.id : listaContatos.length + 1
-        const contatoSalvar = { id: idAtual, nome: nome, numero: telPrincipal, info: infoContato };
-        console.log(contatoSalvar)
+        const contatoSalvar = { id: idAtual, nome: nome, numero: telPrincipal, info: infoContato }
 
         if (idAtual - 1 < listaContatos.length) {
             var newListaContatos = listaContatos.map((contatoLista) => {
@@ -46,18 +42,18 @@ export default function AdicionarContato({ route }) {
             })
         }
         else var newListaContatos = [...listaContatos, contatoSalvar]
-        await AsyncStorage.setItem('listaContatos', JSON.stringify(newListaContatos));
+        await AsyncStorage.setItem('listaContatos', JSON.stringify(newListaContatos))
     }
 
     async function deletarContato() {
         let listaContatos = []
-        const response = await AsyncStorage.getItem('listaContatos');
-        if (response) listaContatos = JSON.parse(response);
+        const response = await AsyncStorage.getItem('listaContatos')
+        if (response) listaContatos = JSON.parse(response)
         var idAtual = route.params.contato.id
         if (idAtual > 0) {
             var newListaContatos = listaContatos.filter(contato => contato.id !== idAtual)
         }
-        await AsyncStorage.setItem('listaContatos', JSON.stringify(newListaContatos));
+        await AsyncStorage.setItem('listaContatos', JSON.stringify(newListaContatos))
     }
 
     function AddInfo() {
@@ -101,6 +97,7 @@ export default function AdicionarContato({ route }) {
                     ]}
                     onPress={
                         () => {
+                            navigator.setParams({ contato: { id: -1, nome: '', numero: '', info: [] } })
                             navigator.navigate(
                                 { name: 'Lista de Contatos' })
                         }}
@@ -111,14 +108,14 @@ export default function AdicionarContato({ route }) {
                     style={styles.botaoInferior}
                     onPress={() => {
                         salvarContato().then(() => {
-                            navigator.setParams({ contato: { id: -1, nome: '', numero: '', info: [] } });
+                            navigator.setParams({ contato: { id: -1, nome: '', numero: '', info: [] } })
                             navigator.navigate({
                                 name: 'Lista de Contatos',
                                 shouldUpdate: true
                             }
-                            );
-                            setInfoContato([]);
-                        });
+                            )
+                            setInfoContato([])
+                        })
                     }}
                 >
                     <AntDesign name="save" size={24} color="black" />
@@ -136,7 +133,7 @@ export default function AdicionarContato({ route }) {
                                         name: 'Lista de Contatos',
                                         shouldUpdate: true
                                     })
-                            });
+                            })
                         }}
                 >
                     <AntDesign name="deleteuser" size={24} color="black" />
@@ -150,9 +147,7 @@ export default function AdicionarContato({ route }) {
             setIDContatoAnt(contato.id)
             contato = (route.params.contato)
             setInfoContato(contato.info)
-            console.log(contato)
             if (contato.nome != null && contato.numero != null) {
-                console.log(contato)
                 setNome(contato.nome)
                 setTelPrincipal(contato.numero)
             }
@@ -216,5 +211,4 @@ export default function AdicionarContato({ route }) {
         </View>
 
     )
-};
-
+}

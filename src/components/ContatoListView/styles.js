@@ -1,33 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginBottom: 24,
-        borderBottomWidth: 0.5,
-        borderBottomColor: '#DADADA'
-    },
-    containerVertical: {
-        justifyContent: 'space-evenly',
-        width: '100%',
-    },
     containerHorizontal: {
         flexDirection: 'row',
-        paddingBottom: 5,
         alignItems: 'center',
     },
-    image: {
-        borderRadius: 10,
-        borderColor: '#000000',
-        borderWidth: 1,
-        backgroundColor: '#45B9B9',
-        height: 55,
-        width: 55,
-        marginLeft: 5,
-        marginTop: '1%',
-        textAlign: 'center',
-        justifyContent: 'center'
-    }, botao: {
+    botao: {
         borderRadius: 250,
         borderColor: '#000000',
         borderWidth: 1,
@@ -56,37 +34,6 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 10,
         backgroundColor: 'transparent',
-    },
-    data: {
-        color: '#DADADA',
-        fontWeight: 'bold'
-    },
-    content: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 2,
-        marginBottom: 8
-    },
-    label: {
-        fontWeight: 'bold',
-        fontSize: 16
-    },
-    valores: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: '#2ECC71'
-    },
-    despesas: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: '#E74C3C'
-    },
-    oculto: {
-        marginTop: 6,
-        width: 80,
-        height: 10,
-        backgroundColor: '#DADADA',
-        borderRadius: 8
     }
 });
 

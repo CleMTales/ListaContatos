@@ -2,27 +2,26 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 10,
         height: '100%',
         marginBottom: 10,
+        paddingTop: 40
     },
     containerHeader: {
         flexDirection: 'row',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        
     },
     containerPesquisa: {
         flexDirection: 'row',
         width: 250
     },
-    containerExibicao: {
+    containerBotaoExibicao: {
         flexDirection: 'row',
         padding: 0,
     },
 
     input: {
-        marginTop: 20,
         height: 30,
         width: 175,
         backgroundColor: '#91BDE2',
@@ -38,7 +37,6 @@ export const styles = StyleSheet.create({
     botaoPesquisa: {
         width: 45,
         height: 30,
-        marginTop: 20,
         backgroundColor: '#686BB2',
         justifyContent: 'center',
         alignItems: 'center',
@@ -52,7 +50,6 @@ export const styles = StyleSheet.create({
     botaoExibicaoEsq: {
         width: 45,
         height: 30,
-        marginTop: 20,
         backgroundColor: '#92BDE1',
         justifyContent: 'center',
         alignItems: 'center',
@@ -67,7 +64,6 @@ export const styles = StyleSheet.create({
     botaoExibicaoDir: {
         width: 45,
         height: 30,
-        marginTop: 20,
         backgroundColor: '#92BDE1',
         justifyContent: 'center',
         alignItems: 'center',
@@ -84,6 +80,12 @@ export const styles = StyleSheet.create({
         top: 0,
         height: '100%',
         width: '100%',
+    },
+    containerExibicao: {
+        alignItems: 'center',
+        height: '93%',
+        width: '100%', 
+        paddingBottom: '15%',
     },
 });
 

@@ -1,25 +1,11 @@
 import { StyleSheet } from 'react-native'
+
 const styles = StyleSheet.create({
     containerBackground: {
         paddingTop: '5%',
         alignItems: 'center',
         height: '100%',
 
-    },
-    background: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        height: '100%',
-        width: '100%',
-    },
-    tituloInfo: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: 'black',
-        marginBottom: -10,
-        marginTop: -10,
     },
     containerVertical: {
         justifyContent: 'space-evenly',
@@ -94,20 +80,7 @@ const styles = StyleSheet.create({
         //bottom: '-15%',
         // right:'-15%',
     },
-    botaoExibicaoEsq: {
-        width: 45,
-        height: 30,
-        marginTop: 20,
-        backgroundColor: '#92BDE1',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderBottomLeftRadius: 15,
-        borderTopLeftRadius: 15,
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderRightWidth: 0,
-    },
+
     botaoInferior: {
         backgroundColor: '#47A86E',
         height: '100%',
@@ -116,19 +89,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'flex-end',
 
-    },
-    botaoExibicaoDir: {
-        width: 45,
-        height: 30,
-        marginTop: 20,
-        backgroundColor: '#92BDE1',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderBottomRightRadius: 15,
-        borderTopRightRadius: 15,
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
     },
     background: {
         position: 'absolute',
