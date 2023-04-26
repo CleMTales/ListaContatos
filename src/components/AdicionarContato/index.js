@@ -6,7 +6,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import ListaInfoContato from '../ListaInfoContato'
 import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
-import { StyleSheet } from 'react-native'
 export default function AdicionarContato({ route }) {
     var contato = route.params.contato
     const [contatoAnteriorID, setIDContatoAnt] = useState('')

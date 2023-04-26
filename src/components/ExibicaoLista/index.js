@@ -1,5 +1,5 @@
 import { View } from "react-native"
-import { memo, useEffect, useState } from "react"
+import { memo } from "react"
 import { FlatList } from "react-native"
 import ContatoListView from "../ContatoListView"
 import { styles } from "./styles"
